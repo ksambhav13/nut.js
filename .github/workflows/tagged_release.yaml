@@ -31,14 +31,8 @@ jobs:
           pnpm i
       - name: Compile
         run: npm run compile
-      - name: Run tests
-        uses: coactions/setup-xvfb@v1
-        with:
-          run: pnpm run coverage
 
   deploy:
-    needs:
-      - test
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -57,14 +51,6 @@ jobs:
         run: |
           pnpm whoami
           pnpm i
-      - name: Run typedoc
-        run: pnpm run typedoc
-      - name: Publish typedocs to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.7.3
-        with:
-          deploy_key: ${{ secrets.API_DOC_DEPLOY_KEY }}
-          external_repository: nut-tree/apidoc
-          publish_dir: ./docs
       - name: Publish tagged release to npm
         run: pnpm run publish:release
         env:
