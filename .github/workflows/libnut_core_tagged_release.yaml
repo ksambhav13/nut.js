@@ -29,6 +29,6 @@ jobs:
       - name: Install
         run: npm run patch && npm i
       - name: Publish tagged release to npm
-        run: pnpm run publish:next
+        run: npm run publish:next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
