@@ -28,10 +28,7 @@ jobs:
         run: sudo apt-get install -y cmake libx11-dev zlib1g-dev libpng-dev libxtst-dev build-essential
       - name: Install
         run: npm run patch && npm i
-      - name: Build
-        run: npm run build:release
-      - name: Publish tagged release
-        uses: JS-DevTools/npm-publish@v2
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          working-directory: ./libnut-core
+      - name: Publish tagged release to npm
+        run: pnpm run publish:next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

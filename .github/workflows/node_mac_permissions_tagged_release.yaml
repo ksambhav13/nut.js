@@ -40,8 +40,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install
         run: npm install
-      - name: Publish tagged release
-        uses: JS-DevTools/npm-publish@v2
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          working-directory: ./node-mac-permissions
+      - name: Publish tagged release to npm
+        run: pnpm run publish:next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
