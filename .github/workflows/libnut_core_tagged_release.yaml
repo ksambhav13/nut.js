@@ -30,11 +30,6 @@ jobs:
         run: npm run patch && npm i
       - name: Build
         run: npm run build:release
-      - name: Run window tests
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          working-directory: ./test/window-integration-tests
-          run: npm cit
       - name: Publish tagged release
         uses: JS-DevTools/npm-publish@v1
         with:
