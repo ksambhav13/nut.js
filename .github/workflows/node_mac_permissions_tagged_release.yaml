@@ -40,9 +40,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Install
         run: npm install
-      - name: Publish snapshot release
-        run: ./.build/pre-release.sh
       - name: Publish tagged release to npm
-        run: npm run publish:next
+        run:
+          -  ./.build/pre-release.sh
+          - npm run publish:next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
