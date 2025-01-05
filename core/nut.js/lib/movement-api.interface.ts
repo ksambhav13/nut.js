@@ -1,4 +1,4 @@
-import { Point } from "@nut-tree/shared";
+import { Point } from "@computer-use/shared";
 
 /**
  * {@link MovementApi} provides helper functions to generate movement paths relative tot he current mouse position

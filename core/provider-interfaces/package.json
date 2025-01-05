@@ -1,7 +1,7 @@
 {
-  "name": "@nut-tree/provider-interfaces",
+  "name": "@computer-use/provider-interfaces",
   "version": "4.2.0",
-  "description": "Public provider interfaces for @nut-tree/nut-js",
+  "description": "Public provider interfaces for @computer-use/nut-js",
   "main": "dist/index",
   "typings": "dist/index",
   "scripts": {
@@ -23,9 +23,9 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@nut-tree/shared": "workspace:*"
+    "@computer-use/shared": "workspace:*"
   },
   "devDependencies": {
-    "@nut-tree/configs": "workspace:*"
+    "@computer-use/configs": "workspace:*"
   }
 }

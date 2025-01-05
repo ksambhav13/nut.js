@@ -34,9 +34,9 @@ jobs:
         run: |
           pnpm whoami
           pnpm i
-      - name: Install @nut-tree/libnut@next
+      - name: Install @computer-use/libnut@next
         run: |
-          pnpm --filter @nut-tree/libnut i @nut-tree/libnut-darwin@next @nut-tree/libnut-linux@next @nut-tree/libnut-win32@next
+          pnpm --filter @computer-use/libnut i @computer-use/libnut-darwin@next @computer-use/libnut-linux@next @computer-use/libnut-win32@next
       - name: Compile
         run: pnpm run compile
       - name: Run tests
@@ -65,9 +65,9 @@ jobs:
         run: |
           pnpm whoami
           pnpm i
-      - name: Install @nut-tree/libnut@next
+      - name: Install @computer-use/libnut@next
         run: |
-          pnpm --filter @nut-tree/libnut i @nut-tree/libnut-darwin@next @nut-tree/libnut-linux@next @nut-tree/libnut-win32@next
+          pnpm --filter @computer-use/libnut i @computer-use/libnut-darwin@next @computer-use/libnut-linux@next @computer-use/libnut-win32@next
       - name: Create snapshot release
         run: bash ./.build/pre-release.sh
       - name: Publish snapshot release to npm

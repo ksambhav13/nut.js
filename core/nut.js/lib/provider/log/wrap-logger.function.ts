@@ -1,4 +1,4 @@
-import { LogProviderInterface } from "@nut-tree/provider-interfaces";
+import { LogProviderInterface } from "@computer-use/provider-interfaces";
 
 const logIdentifier = "[nut.js]";
 const nonErrorLevels = ["info", "warn", "debug", "trace"];

@@ -1,5 +1,5 @@
-import { ColorFinderInterface } from "@nut-tree/provider-interfaces";
-import { ColorQuery, imageToJimp, MatchRequest, MatchResult, Point } from "@nut-tree/shared";
+import { ColorFinderInterface } from "@computer-use/provider-interfaces";
+import { ColorQuery, imageToJimp, MatchRequest, MatchResult, Point } from "@computer-use/shared";
 
 export default class implements ColorFinderInterface {
   async findMatch<PROVIDER_DATA_TYPE>(

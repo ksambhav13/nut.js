@@ -1,6 +1,6 @@
-import { Key } from "@nut-tree/shared";
+import { Key } from "@computer-use/shared";
 import { sleep } from "./sleep.function";
-import { ProviderRegistry } from "@nut-tree/provider-interfaces";
+import { ProviderRegistry } from "@computer-use/provider-interfaces";
 
 type StringOrKey = string[] | Key[];
 

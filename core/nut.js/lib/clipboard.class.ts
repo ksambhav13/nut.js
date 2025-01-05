@@ -1,7 +1,7 @@
 /**
  * {@link ClipboardClass} class gives access to a systems clipboard
  */
-import { ProviderRegistry } from "@nut-tree/provider-interfaces";
+import { ProviderRegistry } from "@computer-use/provider-interfaces";
 
 export class ClipboardClass {
   /**

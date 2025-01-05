@@ -1,4 +1,4 @@
-import { LogProviderInterface } from "@nut-tree/provider-interfaces";
+import { LogProviderInterface } from "@computer-use/provider-interfaces";
 
 export enum ConsoleLogLevel {
   TRACE,

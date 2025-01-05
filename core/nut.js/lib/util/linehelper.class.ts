@@ -1,4 +1,4 @@
-import { Point } from "@nut-tree/shared";
+import { Point } from "@computer-use/shared";
 
 import { Bresenham } from "./bresenham.class";
 

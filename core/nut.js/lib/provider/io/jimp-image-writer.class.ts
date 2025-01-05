@@ -1,5 +1,5 @@
-import { ImageWriter, ImageWriterParameters } from "@nut-tree/provider-interfaces";
-import { imageToJimp } from "@nut-tree/shared";
+import { ImageWriter, ImageWriterParameters } from "@computer-use/provider-interfaces";
+import { imageToJimp } from "@computer-use/shared";
 
 export default class implements ImageWriter {
   store(parameters: ImageWriterParameters): Promise<void> {

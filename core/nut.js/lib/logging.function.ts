@@ -1,4 +1,4 @@
-import { LogProviderInterface } from "@nut-tree/provider-interfaces";
+import { LogProviderInterface } from "@computer-use/provider-interfaces";
 import {
   ConsoleLogLevel,
   ConsoleLogProvider,

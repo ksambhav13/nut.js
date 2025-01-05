@@ -1,7 +1,7 @@
 {
-  "name": "@nut-tree/shared",
+  "name": "@computer-use/shared",
   "version": "4.2.0",
-  "description": "Shared objects, data types and functions for @nut-tree/nut-js",
+  "description": "Shared objects, data types and functions for @computer-use/nut-js",
   "main": "dist/index",
   "typings": "dist/index",
   "scripts": {
@@ -20,7 +20,7 @@
     "jimp": "0.22.10"
   },
   "devDependencies": {
-    "@nut-tree/configs": "workspace:*"
+    "@computer-use/configs": "workspace:*"
   },
   "keywords": [
     "nut-js"
