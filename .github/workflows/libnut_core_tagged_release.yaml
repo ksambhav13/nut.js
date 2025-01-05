@@ -1,5 +1,6 @@
 name: Libnut Core Create tagged release
 on:
+  workflow_dispatch:
   push:
     tags:
       - v*.*.*
