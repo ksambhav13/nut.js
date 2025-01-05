@@ -51,8 +51,8 @@
     "test": "jest --runInBand",
     "coverage": "jest --coverage --runInBand --logHeapUsage",
     "coverage:clean": "rimraf coverage",
-    "publish:next": "pnpm publish --tag next --no-git-checks",
-    "publish:release": "pnpm publish --no-git-checks",
+    "publish:next": "pnpm publish --tag next --no-git-checks --access public",
+    "publish:release": "pnpm publish --no-git-checks --access public",
     "prepublishOnly": "pnpm run compile",
     "typedoc": "typedoc --out docs"
   },

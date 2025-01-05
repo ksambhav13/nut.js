@@ -20,7 +20,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4.1.1
       - name: Set up node
-        uses: actions/setup-node@v4.0.2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node}}
           registry-url: 'https://registry.npmjs.org'
@@ -29,6 +29,8 @@ jobs:
         run: sudo apt-get install -y cmake libx11-dev zlib1g-dev libpng-dev libxtst-dev build-essential
       - name: Install
         run: npm run patch && npm i
+      - name: Publish snapshot release
+        run: ./.build/pre-release.sh
       - name: Publish tagged release to npm
         run: npm run publish:next
         env:

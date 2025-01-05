@@ -10,8 +10,8 @@
     "coverage:clean": "rimraf coverage",
     "clean": "rimraf dist",
     "compile": "pnpm run clean && tsc -p .",
-    "publish:next": "pnpm publish --tag next --no-git-checks",
-    "publish:release": "pnpm publish --no-git-checks",
+    "publish:next": "pnpm publish --tag next --no-git-checks --access public",
+    "publish:release": "pnpm publish --no-git-checks --access public",
     "prepublishOnly": "pnpm run compile",
     "typedoc": "typedoc --out docs"
   },
