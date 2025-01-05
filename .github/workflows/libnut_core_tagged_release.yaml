@@ -31,7 +31,7 @@ jobs:
         run: npm run patch && npm i
       - name: Publish tagged release to npm
         run: |
-          ./.build/pre-release.sh
+          ./.build/pre-publish.sh
           npm run publish:next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
