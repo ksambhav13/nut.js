@@ -1,9 +1,6 @@
 name: Create tagged release
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - v*.*.*
 
 jobs:
   test:

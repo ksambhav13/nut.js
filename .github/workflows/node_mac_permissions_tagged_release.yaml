@@ -1,8 +1,5 @@
 name: node-mac-permissions Create tagged release
 on:
-  push:
-    tags:
-      - v*.*.*
   workflow_dispatch:
 
 defaults:
