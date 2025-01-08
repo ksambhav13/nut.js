@@ -8,7 +8,7 @@ defaults:
 
 jobs:
   deploy:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
