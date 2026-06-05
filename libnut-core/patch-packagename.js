@@ -5,7 +5,7 @@ if (process.env.CI) {
   const filename = join(__dirname, "package.json");
   const packageJson = require(filename);
 
-  const plattformPackageName = `@computer-use/libnut-${process.platform}`;
+  const plattformPackageName = `@orionstario/libnut-${process.platform}`;
   packageJson.name = plattformPackageName;
 
   try {

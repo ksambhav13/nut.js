@@ -1,7 +1,7 @@
 import { MovementApi } from "./movement-api.interface";
-import { isPoint, Point } from "@computer-use/shared";
+import { isPoint, Point } from "@orionstario/shared";
 import { LineHelper } from "./util/linehelper.class";
-import { ProviderRegistry } from "@computer-use/provider-interfaces";
+import { ProviderRegistry } from "@orionstario/provider-interfaces";
 
 export const createMovementApi = (
   providerRegistry: ProviderRegistry,

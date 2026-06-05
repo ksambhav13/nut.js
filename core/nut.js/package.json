@@ -1,5 +1,5 @@
 {
-  "name": "@computer-use/nut-js",
+  "name": "@orionstario/nut-js",
   "version": "4.2.0",
   "license": "Apache-2.0",
   "main": "dist/index",
@@ -57,15 +57,15 @@
     "typedoc": "typedoc --out docs"
   },
   "dependencies": {
-    "@computer-use/default-clipboard-provider": "workspace:*",
-    "@computer-use/libnut": "workspace:*",
-    "@computer-use/shared": "workspace:*",
-    "@computer-use/provider-interfaces": "workspace:*",
+    "@orionstario/default-clipboard-provider": "workspace:*",
+    "@orionstario/libnut": "workspace:*",
+    "@orionstario/shared": "workspace:*",
+    "@orionstario/provider-interfaces": "workspace:*",
     "jimp": "0.22.10",
     "node-abort-controller": "3.1.1"
   },
   "devDependencies": {
-    "@computer-use/configs": "workspace:*"
+    "@orionstario/configs": "workspace:*"
   },
   "engines": {
     "node": ">=16"

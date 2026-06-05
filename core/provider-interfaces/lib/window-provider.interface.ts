@@ -1,4 +1,4 @@
-import { Point, Region, Size } from "@computer-use/shared";
+import { Point, Region, Size } from "@orionstario/shared";
 
 /**
  * A WindowActionProvider should provide access to a system's window system

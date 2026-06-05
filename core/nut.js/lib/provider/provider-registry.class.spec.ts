@@ -8,7 +8,7 @@ import {
   MouseProviderInterface,
   ScreenProviderInterface,
   WindowProviderInterface
-} from "@computer-use/provider-interfaces";
+} from "@orionstario/provider-interfaces";
 
 describe("DefaultProviderRegistry", () => {
   describe("non-defaults", () => {

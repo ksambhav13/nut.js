@@ -21,9 +21,9 @@ jobs:
         uses: pnpm/action-setup@v3.0.0
       - name: Install
         run: pnpm i
-      - name: Install @computer-use/libnut@next
+      - name: Install @orionstario/libnut@next
         run: |
-          pnpm --filter @computer-use/libnut i @computer-use/libnut-darwin@next @computer-use/libnut-linux@next @computer-use/libnut-win32@next
+          pnpm --filter @orionstario/libnut i @orionstario/libnut-darwin@next @orionstario/libnut-linux@next @orionstario/libnut-win32@next
       - name: Compile
         run: pnpm run compile
       - name: Run tests
@@ -49,9 +49,9 @@ jobs:
         uses: pnpm/action-setup@v3.0.0
       - name: Install
         run: pnpm i
-      - name: Install @computer-use/libnut@next
+      - name: Install @orionstario/libnut@next
         run: |
-          pnpm --filter @computer-use/libnut i @computer-use/libnut-darwin@next @computer-use/libnut-linux@next @computer-use/libnut-win32@next
+          pnpm --filter @orionstario/libnut i @orionstario/libnut-darwin@next @orionstario/libnut-linux@next @orionstario/libnut-win32@next
       - name: Create snapshot release
         run: bash ./.build/pre-release.sh
       - name: Publish snapshot release to GitHub Package Registry

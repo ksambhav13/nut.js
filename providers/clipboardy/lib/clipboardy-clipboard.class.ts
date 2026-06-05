@@ -1,5 +1,5 @@
 import clipboardy from "clipboardy";
-import {ClipboardProviderInterface} from "@computer-use/provider-interfaces";
+import {ClipboardProviderInterface} from "@orionstario/provider-interfaces";
 
 export default class implements ClipboardProviderInterface {
     constructor() {

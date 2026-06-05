@@ -1,4 +1,4 @@
-import { LogProviderInterface } from "@computer-use/provider-interfaces";
+import { LogProviderInterface } from "@orionstario/provider-interfaces";
 import {
   ConsoleLogLevel,
   ConsoleLogProvider,

@@ -1,5 +1,5 @@
 import {libnut} from "../import_libnut";
-import {Key} from "@computer-use/shared";
+import {Key} from "@orionstario/shared";
 import KeyboardAction from "./libnut-keyboard.class";
 
 jest.mock("../import_libnut");

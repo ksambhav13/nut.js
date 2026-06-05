@@ -1,13 +1,13 @@
-# @computer-use/libnut
+# @orionstario/libnut
 Installation meta package for platform dependent libnut packages
 
 ## Installation
 ```bash
-npm i @computer-use/libnut
+npm i @orionstario/libnut
 ```
 
 or
 
 ```bash
-yarn add @computer-use/libnut
+yarn add @orionstario/libnut
 ```

@@ -1,4 +1,4 @@
-import { Point } from "@computer-use/shared";
+import { Point } from "@orionstario/shared";
 import { LineHelper } from "./linehelper.class";
 
 describe("LineHelper", () => {

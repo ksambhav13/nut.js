@@ -23,7 +23,7 @@ npx tsc --init
 Let's create a simple demo test:
 
 ```ts
-import { Region, screen } from "@computer-use/nut-js";
+import { Region, screen } from "@orionstario/nut-js";
 
 (async () => {
 	await screen.highlight(new Region(100, 200, 300, 400));

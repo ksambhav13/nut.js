@@ -1,6 +1,6 @@
 import { join, parse } from "path";
 import { cwd } from "process";
-import { FileType } from "@computer-use/shared";
+import { FileType } from "@orionstario/shared";
 
 /**
  * {@link generateOutputPath} is used to assemble full file path from a filename and various parameters

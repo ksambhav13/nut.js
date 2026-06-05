@@ -1,4 +1,4 @@
-import { Point } from "@computer-use/shared";
+import { Point } from "@orionstario/shared";
 
 /**
  * {@link MovementApi} provides helper functions to generate movement paths relative tot he current mouse position

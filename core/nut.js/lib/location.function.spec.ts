@@ -1,5 +1,5 @@
 import { centerOf, randomPointIn } from "./location.function";
-import { Point, Region } from "@computer-use/shared";
+import { Point, Region } from "@orionstario/shared";
 
 describe("Location", () => {
   describe("centerOf", () => {

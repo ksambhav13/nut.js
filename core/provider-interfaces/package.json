@@ -1,7 +1,7 @@
 {
-  "name": "@computer-use/provider-interfaces",
+  "name": "@orionstario/provider-interfaces",
   "version": "4.2.0",
-  "description": "Public provider interfaces for @computer-use/nut-js",
+  "description": "Public provider interfaces for @orionstario/nut-js",
   "main": "dist/index",
   "typings": "dist/index",
   "scripts": {
@@ -26,9 +26,9 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@computer-use/shared": "workspace:*"
+    "@orionstario/shared": "workspace:*"
   },
   "devDependencies": {
-    "@computer-use/configs": "workspace:*"
+    "@orionstario/configs": "workspace:*"
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@computer-use/shared",
+  "name": "@orionstario/shared",
   "version": "4.2.0",
-  "description": "Shared objects, data types and functions for @computer-use/nut-js",
+  "description": "Shared objects, data types and functions for @orionstario/nut-js",
   "main": "dist/index",
   "typings": "dist/index",
   "scripts": {
@@ -20,7 +20,7 @@
     "jimp": "0.22.10"
   },
   "devDependencies": {
-    "@computer-use/configs": "workspace:*"
+    "@orionstario/configs": "workspace:*"
   },
   "keywords": [
     "nut-js"

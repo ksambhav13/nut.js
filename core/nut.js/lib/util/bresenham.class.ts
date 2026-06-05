@@ -1,4 +1,4 @@
-import { Point } from "@computer-use/shared";
+import { Point } from "@orionstario/shared";
 
 export class Bresenham {
   public static compute(from: Point, to: Point): Point[] {

@@ -1,7 +1,7 @@
-import { Key } from "@computer-use/shared";
+import { Key } from "@orionstario/shared";
 import { KeyboardClass } from "./keyboard.class";
 import { mockPartial } from "sneer";
-import { KeyboardProviderInterface, LogProviderInterface, ProviderRegistry } from "@computer-use/provider-interfaces";
+import { KeyboardProviderInterface, LogProviderInterface, ProviderRegistry } from "@orionstario/provider-interfaces";
 import { NoopLogProvider } from "./provider/log/noop-log-provider.class";
 
 jest.setTimeout(10000);
