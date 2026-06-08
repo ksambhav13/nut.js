@@ -1,6 +1,9 @@
 name: Libnut Core Create tagged release
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - publish-libnut-ksambhav13
 
 defaults:
   run:
