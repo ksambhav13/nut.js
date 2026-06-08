@@ -34,7 +34,8 @@ jobs:
         run: npm run patch && npm i
       - name: Publish tagged release to GitHub Package Registry
         run: |
-          ./.build/pre-publish.sh
+          NPMRC="${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> "${NPMRC}"
           npm run publish:next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
