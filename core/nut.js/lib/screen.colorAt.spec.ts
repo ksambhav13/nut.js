@@ -1,7 +1,7 @@
 import { Image, loadImage, Point, Region, RGBA, ScreenClass } from "../index";
 import { mockPartial } from "sneer";
 import providerRegistry from "./provider/provider-registry.class";
-import { ImageProcessor, ProviderRegistry, ScreenProviderInterface } from "@orionstario/provider-interfaces";
+import { ImageProcessor, ProviderRegistry, ScreenProviderInterface } from "@kumar-sambhav/provider-interfaces";
 import { NoopLogProvider } from "./provider/log/noop-log-provider.class";
 
 const searchRegion = new Region(0, 0, 1000, 1000);

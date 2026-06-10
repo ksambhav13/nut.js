@@ -1,5 +1,5 @@
 const { _electron: electron } = require("playwright");
-const { sleep, getActiveWindow, screen, getWindows } = require("@orionstario/nut-js");
+const { sleep, getActiveWindow, screen, getWindows } = require("@kumar-sambhav/nut-js");
 const { POS_X, POS_Y, WIDTH, HEIGHT, TITLE } = require("./constants");
 
 let app;

@@ -1,8 +1,8 @@
 import { join, normalize } from "path";
 import { URL } from "url";
-import { ColorMode, Image } from "@orionstario/shared";
+import { ColorMode, Image } from "@kumar-sambhav/shared";
 import Jimp from "jimp";
-import { ProviderRegistry } from "@orionstario/provider-interfaces";
+import { ProviderRegistry } from "@kumar-sambhav/provider-interfaces";
 
 export function loadImageResource(
   providerRegistry: ProviderRegistry,

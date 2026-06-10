@@ -1,6 +1,6 @@
 import { libnut } from "../import_libnut";
-import { Key } from "@orionstario/shared";
-import { KeyboardProviderInterface } from "@orionstario/provider-interfaces";
+import { Key } from "@kumar-sambhav/shared";
+import { KeyboardProviderInterface } from "@kumar-sambhav/provider-interfaces";
 
 export default class KeyboardAction implements KeyboardProviderInterface {
   public static KeyLookupMap = new Map<Key, string | null>([

@@ -1,5 +1,5 @@
 import { screen } from "../../../index";
-import { Point, RGBA } from "@orionstario/shared";
+import { Point, RGBA } from "@kumar-sambhav/shared";
 import { mockPartial } from "sneer";
 import { toHaveColor } from "./toHaveColor.function";
 

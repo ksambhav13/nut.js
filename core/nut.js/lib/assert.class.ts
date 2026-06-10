@@ -1,4 +1,4 @@
-import { FindInput, OptionalSearchParameters, Region } from "@orionstario/shared";
+import { FindInput, OptionalSearchParameters, Region } from "@kumar-sambhav/shared";
 import { ScreenClass } from "./screen.class";
 
 export class AssertClass {

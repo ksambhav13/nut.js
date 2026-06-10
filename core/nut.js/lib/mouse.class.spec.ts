@@ -1,8 +1,8 @@
-import { Button, Point } from "@orionstario/shared";
+import { Button, Point } from "@kumar-sambhav/shared";
 import { MouseClass } from "./mouse.class";
 import { LineHelper } from "./util/linehelper.class";
 import { mockPartial } from "sneer";
-import { MouseProviderInterface, ProviderRegistry } from "@orionstario/provider-interfaces";
+import { MouseProviderInterface, ProviderRegistry } from "@kumar-sambhav/provider-interfaces";
 import { NoopLogProvider } from "./provider/log/noop-log-provider.class";
 
 beforeEach(() => {

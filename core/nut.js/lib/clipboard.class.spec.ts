@@ -1,7 +1,7 @@
 import { ClipboardClass } from "./clipboard.class";
 import { mockPartial } from "sneer";
 import { NoopLogProvider } from "./provider/log/noop-log-provider.class";
-import { ClipboardProviderInterface, ProviderRegistry } from "@orionstario/provider-interfaces";
+import { ClipboardProviderInterface, ProviderRegistry } from "@kumar-sambhav/provider-interfaces";
 
 beforeEach(() => {
   jest.clearAllMocks();

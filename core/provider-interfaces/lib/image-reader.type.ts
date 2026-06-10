@@ -1,4 +1,4 @@
 import { DataSourceInterface } from "./data-source.interface";
-import { Image } from "@orionstario/shared";
+import { Image } from "@kumar-sambhav/shared";
 
 export type ImageReader = DataSourceInterface<string, Image>;

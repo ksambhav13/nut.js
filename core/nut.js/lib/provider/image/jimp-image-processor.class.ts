@@ -1,6 +1,6 @@
 import Jimp from "jimp";
-import { Image, imageToJimp, Point, RGBA } from "@orionstario/shared";
-import { ImageProcessor } from "@orionstario/provider-interfaces";
+import { Image, imageToJimp, Point, RGBA } from "@kumar-sambhav/shared";
+import { ImageProcessor } from "@kumar-sambhav/provider-interfaces";
 
 export default class implements ImageProcessor {
   async colorAt(

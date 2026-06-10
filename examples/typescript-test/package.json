@@ -13,6 +13,6 @@
     "test": "ts-node index.ts"
   },
   "dependencies": {
-    "@orionstario/nut-js": "workspace:*"
+    "@kumar-sambhav/nut-js": "workspace:*"
   }
 }

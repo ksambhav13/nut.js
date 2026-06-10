@@ -1,5 +1,5 @@
 import { MouseClass } from "../../mouse.class";
-import { Region } from "@orionstario/shared";
+import { Region } from "@kumar-sambhav/shared";
 
 export const toBeIn = async (received: MouseClass, region: Region) => {
   const currentPosition = await received.getPosition();

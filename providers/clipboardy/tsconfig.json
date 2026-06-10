@@ -1,5 +1,5 @@
 {
-  "extends": "@orionstario/configs/tsconfig/base.json",
+  "extends": "@kumar-sambhav/configs/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "./dist"
   },

@@ -1,7 +1,7 @@
 "use strict";
 
-const {jestMatchers, mouse, screen, Point, imageResource, Region, sleep} = require("@orionstario/nut-js");
-require("@orionstario/nl-matcher");
+const {jestMatchers, mouse, screen, Point, imageResource, Region, sleep} = require("@kumar-sambhav/nut-js");
+require("@kumar-sambhav/nl-matcher");
 
 expect.extend(jestMatchers);
 

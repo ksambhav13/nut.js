@@ -1,4 +1,4 @@
-import { Image } from "@orionstario/shared";
+import { Image } from "@kumar-sambhav/shared";
 import { DataSinkInterface } from "./data-sink.interface";
 
 export interface ImageWriterParameters {

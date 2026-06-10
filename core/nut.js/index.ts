@@ -14,7 +14,7 @@ import {
   RGBA,
   WindowQuery,
   WordQuery
-} from "@orionstario/shared";
+} from "@kumar-sambhav/shared";
 
 export {
   AssertClass,
@@ -28,10 +28,10 @@ export {
   providerRegistry
 };
 
-export { MatchRequest } from "@orionstario/shared";
-export { MatchResult } from "@orionstario/shared";
-export * from "@orionstario/provider-interfaces";
-export * from "@orionstario/shared";
+export { MatchRequest } from "@kumar-sambhav/shared";
+export { MatchResult } from "@kumar-sambhav/shared";
+export * from "@kumar-sambhav/provider-interfaces";
+export * from "@kumar-sambhav/shared";
 
 export { jestMatchers } from "./lib/expect/jest.matcher.function";
 export { sleep } from "./lib/sleep.function";

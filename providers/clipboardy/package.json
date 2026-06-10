@@ -1,7 +1,7 @@
 {
-  "name": "@orionstario/default-clipboard-provider",
+  "name": "@kumar-sambhav/default-clipboard-provider",
   "version": "4.2.0",
-  "description": "The @orionstario/nut-js default clipboard provider based on clipboardy",
+  "description": "The @kumar-sambhav/nut-js default clipboard provider based on clipboardy",
   "main": "dist/index",
   "typings": "dist/index",
   "scripts": {
@@ -33,10 +33,10 @@
     "clipboardy": "2.3.0"
   },
   "devDependencies": {
-    "@orionstario/provider-interfaces": "workspace:*",
-    "@orionstario/configs": "workspace:*"
+    "@kumar-sambhav/provider-interfaces": "workspace:*",
+    "@kumar-sambhav/configs": "workspace:*"
   },
   "peerDependencies": {
-    "@orionstario/nut-js": "workspace:^4"
+    "@kumar-sambhav/nut-js": "workspace:^4"
   }
 }

@@ -5,9 +5,9 @@ import {
   ProviderRegistry,
   ScreenProviderInterface,
   WindowProviderInterface
-} from "@orionstario/provider-interfaces";
+} from "@kumar-sambhav/provider-interfaces";
 import { mockPartial } from "sneer";
-import { Region, RGBA, WindowElement, WindowElementDescription, WindowElementQuery } from "@orionstario/shared";
+import { Region, RGBA, WindowElement, WindowElementDescription, WindowElementQuery } from "@kumar-sambhav/shared";
 import { pixelWithColor } from "../index";
 import { NoopLogProvider } from "./provider/log/noop-log-provider.class";
 

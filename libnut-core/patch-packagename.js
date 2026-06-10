@@ -6,7 +6,7 @@ if (process.env.CI) {
   const packageJson = require(filename);
 
   const platformName = process.env.TARGET_PLATFORM || process.platform;
-  const plattformPackageName = `@orionstario/libnut-${platformName}`;
+  const plattformPackageName = `@kumar-sambhav/libnut-${platformName}`;
   packageJson.name = plattformPackageName;
 
   try {

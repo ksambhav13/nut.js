@@ -1,5 +1,5 @@
 {
-  "name": "@orionstario/libnut",
+  "name": "@kumar-sambhav/libnut",
   "version": "4.2.0",
   "description": "libnut is an N-API module for desktop automation with node",
   "main": "dist/index",
@@ -45,16 +45,16 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@orionstario/libnut-darwin": "2.7.2",
-    "@orionstario/libnut-linux": "2.7.2",
-    "@orionstario/libnut-win32": "2.7.2"
+    "@kumar-sambhav/libnut-darwin": "2.7.2",
+    "@kumar-sambhav/libnut-linux": "2.7.2",
+    "@kumar-sambhav/libnut-win32": "2.7.2"
   },
   "devDependencies": {
-    "@orionstario/configs": "workspace:*",
-    "@orionstario/shared": "workspace:*",
-    "@orionstario/provider-interfaces": "workspace:*"
+    "@kumar-sambhav/configs": "workspace:*",
+    "@kumar-sambhav/shared": "workspace:*",
+    "@kumar-sambhav/provider-interfaces": "workspace:*"
   },
   "peerDependencies": {
-    "@orionstario/nut-js": "workspace:^4"
+    "@kumar-sambhav/nut-js": "workspace:^4"
   }
 }

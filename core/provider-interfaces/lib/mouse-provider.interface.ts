@@ -1,4 +1,4 @@
-import { Button, Point } from "@orionstario/shared";
+import { Button, Point } from "@kumar-sambhav/shared";
 
 /**
  * A MouseActionProvider should provide access to a systems mouse input

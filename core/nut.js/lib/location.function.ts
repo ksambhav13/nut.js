@@ -1,4 +1,4 @@
-import { isRegion, Point, Region } from "@orionstario/shared";
+import { isRegion, Point, Region } from "@kumar-sambhav/shared";
 
 /**
  * {@link centerOf} returns the center {@link Point} for a given {@link Region}

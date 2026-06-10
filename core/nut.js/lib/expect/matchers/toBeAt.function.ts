@@ -1,5 +1,5 @@
 import { MouseClass } from "../../mouse.class";
-import { Point } from "@orionstario/shared";
+import { Point } from "@kumar-sambhav/shared";
 
 export const toBeAt = async (received: MouseClass, position: Point) => {
   const currentPosition = await received.getPosition();

@@ -1,4 +1,4 @@
-import { Image, Region, TextQuery } from "@orionstario/shared";
+import { Image, Region, TextQuery } from "@kumar-sambhav/shared";
 import {
   createMatchRequest,
   getMatchResult,
@@ -12,7 +12,7 @@ import {
   LogProviderInterface,
   ProviderRegistry,
   TextFinderInterface
-} from "@orionstario/provider-interfaces";
+} from "@kumar-sambhav/provider-interfaces";
 import { NoopLogProvider } from "./provider/log/noop-log-provider.class";
 
 beforeEach(() => {

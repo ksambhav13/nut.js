@@ -1,4 +1,4 @@
-import { WindowElement, WindowElementDescription } from "@orionstario/shared";
+import { WindowElement, WindowElementDescription } from "@kumar-sambhav/shared";
 
 /**
  * An ElementInspectionProvider provides methods to list and inspect window elements

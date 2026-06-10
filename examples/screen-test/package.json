@@ -13,6 +13,6 @@
     "test": "jest --runInBand"
   },
   "dependencies": {
-    "@orionstario/nut-js": "workspace:*"
+    "@kumar-sambhav/nut-js": "workspace:*"
   }
 }

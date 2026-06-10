@@ -1,4 +1,4 @@
-import { Image, Point, RGBA } from "@orionstario/shared";
+import { Image, Point, RGBA } from "@kumar-sambhav/shared";
 
 /**
  * An ImageProcessor should provide an abstraction layer to perform
