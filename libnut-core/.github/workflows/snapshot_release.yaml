@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{matrix.node}}
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
       - name: Configure Linux environment
         if: ${{matrix.os == 'ubuntu-20.04'}}
         run: sudo apt-get install -y cmake libx11-dev zlib1g-dev libpng-dev libxtst-dev build-essential
@@ -49,13 +49,13 @@ jobs:
         run: ./.build/pre-release.sh
         shell: bash
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish Windows snapshot release
         if: ${{matrix.os == 'windows-2019'}}
         run: ./.build/pre-release.ps1
         shell: powershell
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   dispatch:
     needs:

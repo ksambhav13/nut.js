@@ -17,8 +17,6 @@ jobs:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
         node: [ 18 ]
     runs-on: ${{matrix.os}}
-    permissions:
-      packages: write
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4.1.1
@@ -26,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node}}
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
       - name: Configure Linux environment
         if: ${{ runner.os == 'Linux' }}
         run: sudo apt-get update && sudo apt-get install -y cmake libx11-dev zlib1g-dev libpng-dev libxtst-dev build-essential
@@ -36,13 +34,13 @@ jobs:
           npm_config_registry: https://registry.npmjs.org/
           npm_config_strict_ssl: "false"
           TARGET_PLATFORM: ${{ matrix.os == 'ubuntu-latest' && 'linux' || matrix.os == 'macos-latest' && 'darwin' || 'win32' }}
-      - name: Publish tagged release to GitHub Package Registry
+      - name: Publish tagged release to npm
         run: |
           NPMRC="${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
-          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> "${NPMRC}"
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> "${NPMRC}"
           npm run publish:next
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_TLS_REJECT_UNAUTHORIZED: "0"
-          npm_config_registry: https://npm.pkg.github.com/
+          npm_config_registry: https://registry.npmjs.org/
           npm_config_strict_ssl: "false"

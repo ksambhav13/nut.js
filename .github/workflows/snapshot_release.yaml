@@ -16,14 +16,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node}}
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
       - name: Install
         run: pnpm i
-      - name: Install @orionstario/libnut@next
+      - name: Install @kumar-sambhav/libnut@next
         run: |
-          pnpm --filter @orionstario/libnut i @orionstario/libnut-darwin@next @orionstario/libnut-linux@next @orionstario/libnut-win32@next
+          pnpm --filter @kumar-sambhav/libnut i @kumar-sambhav/libnut-darwin@next @kumar-sambhav/libnut-linux@next @kumar-sambhav/libnut-win32@next
       - name: Compile
         run: pnpm run compile
       - name: Run tests
@@ -35,8 +35,6 @@ jobs:
     needs:
       - test
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
@@ -44,17 +42,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
       - name: Install
         run: pnpm i
-      - name: Install @orionstario/libnut@next
+      - name: Install @kumar-sambhav/libnut@next
         run: |
-          pnpm --filter @orionstario/libnut i @orionstario/libnut-darwin@next @orionstario/libnut-linux@next @orionstario/libnut-win32@next
+          pnpm --filter @kumar-sambhav/libnut i @kumar-sambhav/libnut-darwin@next @kumar-sambhav/libnut-linux@next @kumar-sambhav/libnut-win32@next
       - name: Create snapshot release
         run: bash ./.build/pre-release.sh
-      - name: Publish snapshot release to GitHub Package Registry
+      - name: Publish snapshot release to npm
         run: pnpm run publish:next
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
