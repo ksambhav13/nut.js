@@ -10,7 +10,8 @@ jobs:
         node: [ 18 ]
     runs-on: ${{matrix.os}}
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NODE_TLS_REJECT_UNAUTHORIZED: "0"
+      npm_config_strict_ssl: "false"
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
@@ -18,21 +19,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node}}
-          registry-url: https://registry.npmjs.org/
-          token: ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://npm.pkg.github.com'
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
-      - name: Install
+      - name: Configure registry for @orionstario scope
         run: |
-          pnpm whoami
-          pnpm i
+          printf "@orionstario:registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=%s\n" "${NODE_AUTH_TOKEN}" > .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install
+        run: pnpm i
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm_config_strict_ssl: "false"
       - name: Compile
         run: npm run compile
 
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NODE_TLS_REJECT_UNAUTHORIZED: "0"
+      npm_config_strict_ssl: "false"
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
@@ -40,17 +49,24 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: https://registry.npmjs.org/
-          token: ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://npm.pkg.github.com'
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
-      - name: Install
+      - name: Configure registry for @orionstario scope
         run: |
-          pnpm whoami
-          pnpm i
-      - name: Publish tagged release to npm
+          printf "@orionstario:registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=%s\n" "${NODE_AUTH_TOKEN}" > .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install
+        run: pnpm i
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npm_config_strict_ssl: "false"
+      - name: Publish tagged release to GitHub Package Registry
         run: |
           ./.build/pre-publish.sh
           pnpm run publish:release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+          npm_config_strict_ssl: "false"
