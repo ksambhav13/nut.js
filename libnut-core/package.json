@@ -42,7 +42,7 @@
     "node-addon-api": "7.1.0"
   },
   "optionalDependencies": {
-    "@computer-use/node-mac-permissions": "2.2.2"
+    "@orionstario/node-mac-permissions": "2.2.2"
   },
   "engines": {
     "node": ">=10.15.3"

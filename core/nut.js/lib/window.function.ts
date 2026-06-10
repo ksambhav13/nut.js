@@ -1,6 +1,6 @@
 import { WindowApi } from "./window-api.interface";
 import { Window } from "./window.class";
-import { ProviderRegistry } from "@computer-use/provider-interfaces";
+import { ProviderRegistry } from "@orionstario/provider-interfaces";
 
 export const createWindowApi = (
   providerRegistry: ProviderRegistry

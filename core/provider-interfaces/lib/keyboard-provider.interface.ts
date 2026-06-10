@@ -1,4 +1,4 @@
-import { Key } from "@computer-use/shared";
+import { Key } from "@orionstario/shared";
 
 /**
  * A KeyboardActionProvider should provide access to a systems keyboard

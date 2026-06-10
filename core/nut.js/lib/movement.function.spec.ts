@@ -1,7 +1,7 @@
 import { createMovementApi } from "./movement.function";
 import { mockPartial } from "sneer";
-import { MouseProviderInterface, ProviderRegistry } from "@computer-use/provider-interfaces";
-import { Point } from "@computer-use/shared";
+import { MouseProviderInterface, ProviderRegistry } from "@orionstario/provider-interfaces";
+import { Point } from "@orionstario/shared";
 
 beforeEach(() => {
   jest.clearAllMocks();

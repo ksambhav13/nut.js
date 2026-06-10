@@ -1,4 +1,4 @@
-import { Image, Region } from "@computer-use/shared";
+import { Image, Region } from "@orionstario/shared";
 
 /**
  * A ScreenActionProvider should provide access to a system's main screen

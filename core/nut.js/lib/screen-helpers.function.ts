@@ -13,8 +13,8 @@ import {
   Region,
   RegionResultFindInput,
   TextQuery
-} from "@computer-use/shared";
-import { ProviderRegistry } from "@computer-use/provider-interfaces";
+} from "@orionstario/shared";
+import { ProviderRegistry } from "@orionstario/provider-interfaces";
 
 export function isRegionResultFindInput(
   input: RegionResultFindInput | PointResultFindInput

@@ -23,11 +23,11 @@ import {
   WindowCallback,
   WindowResultFindInput,
   WordQuery
-} from "@computer-use/shared";
+} from "@orionstario/shared";
 import { generateOutputPath } from "./generate-output-path.function";
 import { timeout } from "./util/timeout.function";
 import { Window } from "./window.class";
-import { ProviderRegistry } from "@computer-use/provider-interfaces";
+import { ProviderRegistry } from "@orionstario/provider-interfaces";
 import {
   createMatchRequest,
   getMatchResult,

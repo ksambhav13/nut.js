@@ -1,5 +1,5 @@
 import { AssertClass } from "./assert.class";
-import { Region } from "@computer-use/shared";
+import { Region } from "@orionstario/shared";
 import { ScreenClass } from "./screen.class";
 import providerRegistry from "./provider/provider-registry.class";
 import { Image } from "../index";

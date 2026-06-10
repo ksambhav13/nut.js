@@ -49,16 +49,16 @@ importers:
 
   core/nut.js:
     dependencies:
-      '@computer-use/default-clipboard-provider':
+      '@orionstario/default-clipboard-provider':
         specifier: workspace:*
         version: link:../../providers/clipboardy
-      '@computer-use/libnut':
+      '@orionstario/libnut':
         specifier: workspace:*
         version: link:../../providers/libnut
-      '@computer-use/provider-interfaces':
+      '@orionstario/provider-interfaces':
         specifier: workspace:*
         version: link:../provider-interfaces
-      '@computer-use/shared':
+      '@orionstario/shared':
         specifier: workspace:*
         version: link:../shared
       jimp:
@@ -68,17 +68,17 @@ importers:
         specifier: 3.1.1
         version: 3.1.1
     devDependencies:
-      '@computer-use/configs':
+      '@orionstario/configs':
         specifier: workspace:*
         version: link:../configs
 
   core/provider-interfaces:
     dependencies:
-      '@computer-use/shared':
+      '@orionstario/shared':
         specifier: workspace:*
         version: link:../shared
     devDependencies:
-      '@computer-use/configs':
+      '@orionstario/configs':
         specifier: workspace:*
         version: link:../configs
 
@@ -91,13 +91,13 @@ importers:
         specifier: 3.1.1
         version: 3.1.1
     devDependencies:
-      '@computer-use/configs':
+      '@orionstario/configs':
         specifier: workspace:*
         version: link:../configs
 
   e2e/window-test:
     devDependencies:
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:*
         version: link:../../core/nut.js
       '@playwright/test':
@@ -118,13 +118,13 @@ importers:
 
   examples/jest-test:
     dependencies:
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:*
         version: link:../../core/nut.js
 
   examples/keyboard-test:
     dependencies:
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:*
         version: link:../../core/nut.js
       run-script-os:
@@ -133,60 +133,60 @@ importers:
 
   examples/mouse-test:
     dependencies:
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:*
         version: link:../../core/nut.js
 
   examples/screen-test:
     dependencies:
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:*
         version: link:../../core/nut.js
 
   examples/typescript-test:
     dependencies:
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:*
         version: link:../../core/nut.js
 
   providers/clipboardy:
     dependencies:
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:^4
         version: link:../../core/nut.js
       clipboardy:
         specifier: 2.3.0
         version: 2.3.0
     devDependencies:
-      '@computer-use/configs':
+      '@orionstario/configs':
         specifier: workspace:*
         version: link:../../core/configs
-      '@computer-use/provider-interfaces':
+      '@orionstario/provider-interfaces':
         specifier: workspace:*
         version: link:../../core/provider-interfaces
 
   providers/libnut:
     dependencies:
-      '@computer-use/libnut-darwin':
+      '@orionstario/libnut-darwin':
         specifier: 2.7.1
         version: 2.7.1
-      '@computer-use/libnut-linux':
+      '@orionstario/libnut-linux':
         specifier: 2.7.1
         version: 2.7.1
-      '@computer-use/libnut-win32':
+      '@orionstario/libnut-win32':
         specifier: 2.7.1
         version: 2.7.1
-      '@computer-use/nut-js':
+      '@orionstario/nut-js':
         specifier: workspace:^4
         version: link:../../core/nut.js
     devDependencies:
-      '@computer-use/configs':
+      '@orionstario/configs':
         specifier: workspace:*
         version: link:../../core/configs
-      '@computer-use/provider-interfaces':
+      '@orionstario/provider-interfaces':
         specifier: workspace:*
         version: link:../../core/provider-interfaces
-      '@computer-use/shared':
+      '@orionstario/shared':
         specifier: workspace:*
         version: link:../../core/shared
 
@@ -357,29 +357,29 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@computer-use/libnut-darwin@2.7.1':
+  '@orionstario/libnut-darwin@2.7.1':
     resolution: {integrity: sha512-7B/aPcIYS4a4S7D3IYIHSpZ4B4m8Z3CjlYq0efTr+/JYmEu+LlO67ZhPvisLKifhagxf7goqEfnphg1F4jq5jw==}
     engines: {node: '>=10.15.3'}
     cpu: [x64, arm64]
     os: [darwin, linux, win32]
 
-  '@computer-use/libnut-linux@2.7.1':
+  '@orionstario/libnut-linux@2.7.1':
     resolution: {integrity: sha512-QJD5URTFJ/2+JwBwRyajRF2BB+3eXpd4+t5btGeRVeiRQLKQ4lgorbMHySo6IrfAbSfnU1OVOrxAUygGxj0cFg==}
     engines: {node: '>=10.15.3'}
     cpu: [x64, arm64]
     os: [darwin, linux, win32]
 
-  '@computer-use/libnut-win32@2.7.1':
+  '@orionstario/libnut-win32@2.7.1':
     resolution: {integrity: sha512-nDvH5kP1zoO2cBtFYWV0om9xtTu523cc1LIk8r/wizqPrIAm0wCizTU+odF3Fi42zcKJWT6J+Pguy8fKrZyIuA==}
     engines: {node: '>=10.15.3'}
     cpu: [x64, arm64]
     os: [darwin, linux, win32]
 
-  '@computer-use/node-mac-permissions@2.2.1':
+  '@orionstario/node-mac-permissions@2.2.1':
     resolution: {integrity: sha512-fIrwuV1T0JqEwes3aCZpvPxW6oZufc9kRdRErHmYXVy8laEhxqoJrI9a/LQ3TG/aZFM/aX3A0bhCsDj9EC3kwg==}
     os: [darwin]
 
-  '@computer-use/node-mac-permissions@2.2.2':
+  '@orionstario/node-mac-permissions@2.2.2':
     resolution: {integrity: sha512-rgiEy3tR92qEBYEDaiNs1s7bBhMPQzHivSyQ+DpWV4l+Qosf+WoywHPUJqFwukVieB2NKpOTQx0iwZoJajLGMg==}
     os: [darwin]
 
@@ -3152,31 +3152,31 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@computer-use/libnut-darwin@2.7.1':
+  '@orionstario/libnut-darwin@2.7.1':
     dependencies:
       bindings: 1.5.0
     optionalDependencies:
-      '@computer-use/node-mac-permissions': 2.2.2
+      '@orionstario/node-mac-permissions': 2.2.2
 
-  '@computer-use/libnut-linux@2.7.1':
+  '@orionstario/libnut-linux@2.7.1':
     dependencies:
       bindings: 1.5.0
     optionalDependencies:
-      '@computer-use/node-mac-permissions': 2.2.1
+      '@orionstario/node-mac-permissions': 2.2.1
 
-  '@computer-use/libnut-win32@2.7.1':
+  '@orionstario/libnut-win32@2.7.1':
     dependencies:
       bindings: 1.5.0
     optionalDependencies:
-      '@computer-use/node-mac-permissions': 2.2.1
+      '@orionstario/node-mac-permissions': 2.2.1
 
-  '@computer-use/node-mac-permissions@2.2.1':
+  '@orionstario/node-mac-permissions@2.2.1':
     dependencies:
       bindings: 1.5.0
       node-addon-api: 5.0.0
     optional: true
 
-  '@computer-use/node-mac-permissions@2.2.2':
+  '@orionstario/node-mac-permissions@2.2.2':
     dependencies:
       bindings: 1.5.0
       node-addon-api: 5.0.0

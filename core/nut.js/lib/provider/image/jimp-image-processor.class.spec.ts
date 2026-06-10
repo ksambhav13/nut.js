@@ -1,4 +1,4 @@
-import { Image, Point } from "@computer-use/shared";
+import { Image, Point } from "@orionstario/shared";
 import JimpImageProcessor from "./jimp-image-processor.class";
 
 const imageWidth = 10;

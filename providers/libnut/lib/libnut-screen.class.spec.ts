@@ -1,5 +1,5 @@
 import {libnut} from "../import_libnut";
-import {Region} from "@computer-use/shared";
+import {Region} from "@orionstario/shared";
 import ScreenAction from "./libnut-screen.class";
 
 jest.mock("jimp", () => {});

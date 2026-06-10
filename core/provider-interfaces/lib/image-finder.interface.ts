@@ -1,4 +1,4 @@
-import { Image, MatchRequest, MatchResult, Region } from "@computer-use/shared";
+import { Image, MatchRequest, MatchResult, Region } from "@orionstario/shared";
 
 /**
  * An ImageFinder should provide an abstraction layer to perform image matching
