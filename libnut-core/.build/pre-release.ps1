@@ -1,4 +1,4 @@
-"//registry.npmjs.org/:_authToken=$env:NPM_TOKEN`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII
+"//npm.pkg.github.com/:_authToken=$env:NODE_AUTH_TOKEN`n" | out-file "$env:userprofile\.npmrc" -Encoding ASCII
 npm whoami
 
 $timestamp = Get-Date -Format yyyyMMddhhmmss

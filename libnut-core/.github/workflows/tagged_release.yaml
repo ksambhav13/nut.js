@@ -15,6 +15,8 @@ jobs:
         os: [ ubuntu-20.04, macos-11, windows-2019 ]
         node: [ 18 ]
     runs-on: ${{matrix.os}}
+    permissions:
+      packages: write
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4.1.1
@@ -22,6 +24,7 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{matrix.node}}
+          registry-url: 'https://registry.npmjs.org'
       - name: Configure Linux environment
         if: ${{matrix.os == 'ubuntu-20.04'}}
         run: sudo apt-get install -y cmake libx11-dev zlib1g-dev libpng-dev libxtst-dev build-essential
@@ -40,6 +43,8 @@ jobs:
           working-directory: ./test/window-integration-tests
           run: npm cit
       - name: Publish tagged release
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+        run: |
+          ./.build/pre-publish.sh
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

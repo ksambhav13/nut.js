@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
@@ -22,14 +22,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: https://registry.npmjs.org/
-          token: ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
       - name: Install
-        run: |
-          pnpm whoami
-          pnpm i
+        run: pnpm i
       - name: Compile
         run: pnpm -r run compile
       - name: Clean coverage report
@@ -52,7 +49,7 @@ jobs:
     needs:
       - sonar
     env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         os: [ windows-latest, macos-latest ]
@@ -65,8 +62,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node}}
-          registry-url: https://registry.npmjs.org/
-          token: ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'
       - name: Setup pnpm
         uses: pnpm/action-setup@v3.0.0
       - name: Install

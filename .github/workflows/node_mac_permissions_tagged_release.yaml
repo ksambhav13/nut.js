@@ -21,7 +21,7 @@ jobs:
         run: npm install
       - name: Publish tagged release to npm
         run: |
-          ./.build/pre-publish.sh
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
           npm run publish:next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -25,6 +25,8 @@ jobs:
     needs:
       - test
     runs-on: macos-11
+    permissions:
+      packages: write
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
@@ -36,6 +38,8 @@ jobs:
       - name: Install
         run: npm install
       - name: Publish tagged release
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+        run: |
+          ./.build/pre-publish.sh
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
