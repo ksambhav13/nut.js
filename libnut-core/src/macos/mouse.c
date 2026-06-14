@@ -145,7 +145,8 @@ void toggleMouse(bool down, MMMouseButton button) {
   CGEventRef event = CGEventCreateMouseEvent(src, mouseType, currentPos,
                                              (CGMouseButton)button);
   double maxInterval = GetDoubleClickTime();
-  if (intervalSinceLastClick > 0 && intervalSinceLastClick <= maxInterval &&
+  double intervalMs = (double)intervalSinceLastClick * 1000.0 / CLOCKS_PER_SEC;
+  if (intervalMs > 0 && intervalMs <= maxInterval &&
       areSamePoint(currentMMPoint, clickTimer.clickLocation)) {
     CGEventSetIntegerValueField(event, kCGMouseEventClickState, 2);
   }
