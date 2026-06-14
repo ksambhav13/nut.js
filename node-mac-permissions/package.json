@@ -1,5 +1,5 @@
 {
-  "name": "@computer-use/node-mac-permissions",
+  "name": "@kumar-sambhav/node-mac-permissions",
   "version": "2.2.2",
   "description": "A native node module to manage system permissions on macOS",
   "main": "index.js",

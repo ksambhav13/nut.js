@@ -1,7 +1,7 @@
 import { MovementApi } from "./movement-api.interface";
-import { isPoint, Point } from "@computer-use/shared";
+import { isPoint, Point } from "@kumar-sambhav/shared";
 import { LineHelper } from "./util/linehelper.class";
-import { ProviderRegistry } from "@computer-use/provider-interfaces";
+import { ProviderRegistry } from "@kumar-sambhav/provider-interfaces";
 
 export const createMovementApi = (
   providerRegistry: ProviderRegistry,

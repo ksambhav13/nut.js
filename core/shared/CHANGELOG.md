@@ -1,4 +1,4 @@
-# @computer-use/default-clipboard-provider change log
+# @kumar-sambhav/default-clipboard-provider change log
 
 All notable changes to this project will be documented in this file.
 

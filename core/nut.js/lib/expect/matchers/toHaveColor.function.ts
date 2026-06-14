@@ -1,5 +1,5 @@
 import { screen } from "../../../index";
-import { Point, RGBA } from "@computer-use/shared";
+import { Point, RGBA } from "@kumar-sambhav/shared";
 
 export const toHaveColor = async (received: Point, needle: RGBA) => {
   const color = await screen.colorAt(received);

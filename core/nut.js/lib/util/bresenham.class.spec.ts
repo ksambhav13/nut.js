@@ -1,4 +1,4 @@
-import { Point } from "@computer-use/shared";
+import { Point } from "@kumar-sambhav/shared";
 import { Bresenham } from "./bresenham.class";
 
 describe("Bresenham", () => {

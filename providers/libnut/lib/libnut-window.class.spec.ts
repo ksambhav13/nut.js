@@ -1,6 +1,6 @@
 import { libnut } from "../import_libnut";
 import WindowAction from "./libnut-window.class";
-import { Region } from "@computer-use/shared";
+import { Region } from "@kumar-sambhav/shared";
 
 jest.mock("../import_libnut");
 

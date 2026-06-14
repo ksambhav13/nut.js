@@ -1,10 +1,10 @@
 import ln from "./libnut";
 
 const libnut: typeof ln = (process.platform === 'win32') ?
-    require("@computer-use/libnut-win32") :
+    require("@kumar-sambhav/libnut-win32") :
     (process.platform === 'linux') ?
-        require("@computer-use/libnut-linux") :
-        require("@computer-use/libnut-darwin")
+        require("@kumar-sambhav/libnut-linux") :
+        require("@kumar-sambhav/libnut-darwin")
 
 export {
     libnut,

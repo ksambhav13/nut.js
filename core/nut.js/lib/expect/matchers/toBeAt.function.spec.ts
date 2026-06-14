@@ -1,5 +1,5 @@
 import { mouse } from "../../../index";
-import { Point } from "@computer-use/shared";
+import { Point } from "@kumar-sambhav/shared";
 import { toBeAt } from "./toBeAt.function";
 
 const targetPoint = new Point(100, 100);

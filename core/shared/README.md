@@ -1,3 +1,3 @@
-# @computer-use/shared
+# @kumar-sambhav/shared
 
-This package contains shared code to be used by the @computer-use/nut-js and e.g. provider implementations.
+This package contains shared code to be used by the @kumar-sambhav/nut-js and e.g. provider implementations.

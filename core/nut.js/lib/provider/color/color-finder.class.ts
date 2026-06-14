@@ -1,5 +1,5 @@
-import { ColorFinderInterface } from "@computer-use/provider-interfaces";
-import { ColorQuery, imageToJimp, MatchRequest, MatchResult, Point } from "@computer-use/shared";
+import { ColorFinderInterface } from "@kumar-sambhav/provider-interfaces";
+import { ColorQuery, imageToJimp, MatchRequest, MatchResult, Point } from "@kumar-sambhav/shared";
 
 export default class implements ColorFinderInterface {
   async findMatch<PROVIDER_DATA_TYPE>(

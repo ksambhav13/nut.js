@@ -1,4 +1,4 @@
-import { Image, Region, TextQuery } from "@computer-use/shared";
+import { Image, Region, TextQuery } from "@kumar-sambhav/shared";
 import {
   createMatchRequest,
   getMatchResult,
@@ -12,7 +12,7 @@ import {
   LogProviderInterface,
   ProviderRegistry,
   TextFinderInterface
-} from "@computer-use/provider-interfaces";
+} from "@kumar-sambhav/provider-interfaces";
 import { NoopLogProvider } from "./provider/log/noop-log-provider.class";
 
 beforeEach(() => {

@@ -1,6 +1,6 @@
 "use strict";
 
-const { screen, Region, imageResource } = require("@computer-use/nut-js");
+const { screen, Region, imageResource } = require("@kumar-sambhav/nut-js");
 
 describe("Screen test", () => {
   describe("dimensions", () => {

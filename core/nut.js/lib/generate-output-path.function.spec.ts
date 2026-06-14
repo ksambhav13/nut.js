@@ -1,6 +1,6 @@
 import { join } from "path";
 import { cwd } from "process";
-import { FileType } from "@computer-use/shared";
+import { FileType } from "@kumar-sambhav/shared";
 import { generateOutputPath } from "./generate-output-path.function";
 
 describe("generate-output-path", () => {

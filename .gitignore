@@ -142,3 +142,4 @@ fabric.properties
 docs
 scratch.js
 debug.js
+.secrets

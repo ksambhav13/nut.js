@@ -1,6 +1,6 @@
 import Jimp from "jimp";
-import { ImageReader } from "@computer-use/provider-interfaces";
-import { ColorMode, Image } from "@computer-use/shared";
+import { ImageReader } from "@kumar-sambhav/provider-interfaces";
+import { ColorMode, Image } from "@kumar-sambhav/shared";
 
 export default class implements ImageReader {
   load(parameters: string): Promise<Image> {

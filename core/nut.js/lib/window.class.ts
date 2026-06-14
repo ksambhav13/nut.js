@@ -11,8 +11,8 @@ import {
   WindowElementQuery,
   WindowElementResultFindInput,
   WindowInterface
-} from "@computer-use/shared";
-import { ProviderRegistry } from "@computer-use/provider-interfaces";
+} from "@kumar-sambhav/shared";
+import { ProviderRegistry } from "@kumar-sambhav/provider-interfaces";
 import { timeout } from "./util/timeout.function";
 
 export class Window implements WindowInterface {

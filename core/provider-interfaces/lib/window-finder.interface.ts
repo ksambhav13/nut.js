@@ -1,4 +1,4 @@
-import { WindowQuery } from "@computer-use/shared";
+import { WindowQuery } from "@kumar-sambhav/shared";
 
 /**
  * A WindowFinder should provide an abstraction layer to perform window searches

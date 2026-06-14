@@ -1,4 +1,4 @@
-import { ColorQuery, MatchRequest, MatchResult, Point } from "@computer-use/shared";
+import { ColorQuery, MatchRequest, MatchResult, Point } from "@kumar-sambhav/shared";
 
 /**
  * A WindowFinder should provide an abstraction layer to perform window searches

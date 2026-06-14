@@ -1,7 +1,7 @@
 {
-  "name": "@computer-use/default-clipboard-provider",
+  "name": "@kumar-sambhav/default-clipboard-provider",
   "version": "4.2.0",
-  "description": "The @computer-use/nut-js default clipboard provider based on clipboardy",
+  "description": "The @kumar-sambhav/nut-js default clipboard provider based on clipboardy",
   "main": "dist/index",
   "typings": "dist/index",
   "scripts": {
@@ -26,14 +26,17 @@
     "url": "https://dry.software"
   },
   "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "dependencies": {
     "clipboardy": "2.3.0"
   },
   "devDependencies": {
-    "@computer-use/provider-interfaces": "workspace:*",
-    "@computer-use/configs": "workspace:*"
+    "@kumar-sambhav/provider-interfaces": "workspace:*",
+    "@kumar-sambhav/configs": "workspace:*"
   },
   "peerDependencies": {
-    "@computer-use/nut-js": "workspace:^4"
+    "@kumar-sambhav/nut-js": "workspace:^4"
   }
 }

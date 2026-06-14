@@ -1,4 +1,4 @@
-import { LogProviderInterface } from "@computer-use/provider-interfaces";
+import { LogProviderInterface } from "@kumar-sambhav/provider-interfaces";
 import {
   ConsoleLogLevel,
   ConsoleLogProvider,

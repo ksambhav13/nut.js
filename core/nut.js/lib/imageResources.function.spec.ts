@@ -1,8 +1,8 @@
 import { fetchFromUrl, loadImageResource } from "./imageResources.function";
 import { mockPartial } from "sneer";
-import { ImageReader, ProviderRegistry } from "@computer-use/provider-interfaces";
+import { ImageReader, ProviderRegistry } from "@kumar-sambhav/provider-interfaces";
 import { join } from "path";
-import { ColorMode } from "@computer-use/shared";
+import { ColorMode } from "@kumar-sambhav/shared";
 
 const loadMock = jest.fn();
 const providerRegistryMock = mockPartial<ProviderRegistry>({

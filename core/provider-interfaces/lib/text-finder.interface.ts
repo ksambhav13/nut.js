@@ -1,4 +1,4 @@
-import { MatchRequest, MatchResult, Region, TextQuery } from "@computer-use/shared";
+import { MatchRequest, MatchResult, Region, TextQuery } from "@kumar-sambhav/shared";
 
 /**
  * A TextFinder should provide an abstraction layer to perform text searches

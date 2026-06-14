@@ -1,6 +1,6 @@
 import { libnut } from "../import_libnut";
-import { Point, Region, Size } from "@computer-use/shared";
-import { WindowProviderInterface } from "@computer-use/provider-interfaces";
+import { Point, Region, Size } from "@kumar-sambhav/shared";
+import { WindowProviderInterface } from "@kumar-sambhav/provider-interfaces";
 
 export default class WindowAction implements WindowProviderInterface {
   public getWindows(): Promise<number[]> {

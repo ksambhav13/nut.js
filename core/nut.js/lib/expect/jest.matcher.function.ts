@@ -1,4 +1,4 @@
-import { FindInput, OptionalSearchParameters, Point, Region, RGBA } from "@computer-use/shared";
+import { FindInput, OptionalSearchParameters, Point, Region, RGBA } from "@kumar-sambhav/shared";
 import { toBeAt } from "./matchers/toBeAt.function";
 import { toBeIn } from "./matchers/toBeIn.function";
 import { toShow } from "./matchers/toShow.function";

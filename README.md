@@ -112,9 +112,9 @@ It's work in progress and will undergo constant modification.
 - [x] Retrieve RGBA color information on screen
 - [x] Highlighting screen regions
 - [x] Find a single or multiple occurrences of an image on screen (requires an additional provider package like
-  e.g. [nut-tree/template-matcher](https://www.npmjs.com/package/@computer-use/template-matcher))
+  e.g. [nut-tree/template-matcher](https://www.npmjs.com/package/@kumar-sambhav/template-matcher))
 - [x] Wait for an image to appear on screen (requires an additional provider package like
-  e.g. [nut-tree/template-matcher](https://www.npmjs.com/package/@computer-use/template-matcher))
+  e.g. [nut-tree/template-matcher](https://www.npmjs.com/package/@kumar-sambhav/template-matcher))
 - [x] Find a single or multiple occurrences of text on screen (\*)
 - [x] Wait for a piece of text to appear on screen (\*)
 - [x] Find a single or multiple windows on screen (\*)
@@ -147,13 +147,13 @@ const {
   centerOf,
   Button,
   getActiveWindow,
-} = require("@computer-use/nut-js");
+} = require("@kumar-sambhav/nut-js");
 const {
   preloadLanguages,
   Language,
   LanguageModelType,
   configure,
-} = require("@computer-use/plugin-ocr");
+} = require("@kumar-sambhav/plugin-ocr");
 
 configure({ languageModelType: LanguageModelType.BEST });
 
@@ -169,7 +169,7 @@ function activeWindowRegion() {
 (async () => {
   await preloadLanguages([Language.English], [LanguageModelType.BEST]);
   await sleep(5000);
-  const result = await screen.find(singleWord("@computer-use/nut-js"));
+  const result = await screen.find(singleWord("@kumar-sambhav/nut-js"));
   await mouse.move(straightTo(centerOf(result)));
   await mouse.click(Button.LEFT);
   await screen.waitFor(singleWord("Native"), 15000, 1000, {
@@ -267,7 +267,7 @@ The core functionality of `nut.js` is open source and available on GitHub.
 
 To build nut.js from source you'll have to build native dependencies first.
 
-- Start with [@computer-use/libnut-core](https://github.com/nut-tree/libnut-core)
+- Start with [@kumar-sambhav/libnut-core](https://github.com/nut-tree/libnut-core)
     - A build pipeline can be found in the respective repository
 - Update dependencies in `nut.js` to point to your local build of `libnut-core`
     - A build pipeline can be found in the respective repository
@@ -284,13 +284,13 @@ package, [check out the registry access tutorial for reference](https://nutjs.de
 With everything set up, running
 
 ```bash
-npm i @computer-use/nut-js
+npm i @kumar-sambhav/nut-js
 ```
 
 or
 
 ```bash
-yarn add @computer-use/nut-js
+yarn add @kumar-sambhav/nut-js
 ```
 
 will install `nut.js` and its required dependencies.
@@ -302,13 +302,13 @@ will install `nut.js` and its required dependencies.
 Running
 
 ```bash
-npm i @computer-use/nut-js@next
+npm i @kumar-sambhav/nut-js@next
 ```
 
 or
 
 ```bash
-yarn add @computer-use/nut-js@next
+yarn add @kumar-sambhav/nut-js@next
 ```
 
 will install the most recent development release of `nut.js`.
@@ -317,3 +317,153 @@ will install the most recent development release of `nut.js`.
 a snapshot release.
 Please bear in mind that things might change and / or break on snapshot releases, so it is not recommended using them in
 production.
+
+# Publishing (@kumar-sambhav)
+
+This section documents the full release process for publishing packages to the `@kumar-sambhav` GitHub Package Registry using [`act`](https://github.com/nektos/act) to run GitHub Actions workflows locally.
+
+## Prerequisites
+
+- [`act`](https://github.com/nektos/act) installed (`brew install act`)
+- Docker running via [Colima](https://github.com/abiosoft/colima) (`colima start`)
+- A `.secrets` file in the repo root with a PAT that has `write:packages` for the `orionstario` org:
+  ```
+  NODE_AUTH_TOKEN=ghp_...
+  GITHUB_TOKEN=ghp_...
+  ```
+
+## Setup: Git Worktree
+
+All publish runs happen from an isolated git worktree to avoid touching the working branch:
+
+```bash
+git worktree add --detach /tmp/nut-release-workspace HEAD
+```
+
+Copy `.secrets` into the worktree:
+
+```bash
+cp .secrets /tmp/nut-release-workspace/.secrets
+```
+
+## Step 1 — Publish Native Binaries (`libnut_core_tagged_release.yaml`)
+
+This publishes the platform-specific native addon packages (`@kumar-sambhav/libnut-linux`, `@kumar-sambhav/libnut-darwin`, `@kumar-sambhav/libnut-win32`).
+
+Run each platform separately — mixing Docker and self-hosted runners in a single invocation causes act to skip all jobs.
+
+**Linux:**
+```bash
+cd /tmp/nut-release-workspace && act workflow_dispatch \
+  -W .github/workflows/libnut_core_tagged_release.yaml \
+  --secret-file .secrets \
+  -P ubuntu-latest=catthehacker/ubuntu:act-latest \
+  --container-architecture linux/amd64 \
+  --container-daemon-socket - \
+  --matrix os:ubuntu-latest
+```
+
+**Windows** (runs via Linux Docker container):
+```bash
+cd /tmp/nut-release-workspace && act workflow_dispatch \
+  -W .github/workflows/libnut_core_tagged_release.yaml \
+  --secret-file .secrets \
+  -P windows-latest=catthehacker/ubuntu:act-latest \
+  --container-architecture linux/amd64 \
+  --container-daemon-socket - \
+  --matrix os:windows-latest
+```
+
+**macOS** (runs on the local machine as self-hosted runner):
+```bash
+cd /tmp/nut-release-workspace && act workflow_dispatch \
+  -W .github/workflows/libnut_core_tagged_release.yaml \
+  --secret-file .secrets \
+  -P macos-latest=-self-hosted \
+  --container-daemon-socket - \
+  --matrix os:macos-latest
+```
+
+## Step 2 — Publish Monorepo Packages (`tagged_release.yaml`)
+
+This compiles and publishes the TypeScript workspace packages (`@kumar-sambhav/nut-js`, `@kumar-sambhav/libnut`, `@kumar-sambhav/shared`, `@kumar-sambhav/provider-interfaces`, `@kumar-sambhav/default-clipboard-provider`).
+
+### Test job (all three platforms)
+
+**Linux:**
+```bash
+cd /tmp/nut-release-workspace && act workflow_dispatch \
+  -W .github/workflows/tagged_release.yaml \
+  --secret-file .secrets \
+  -j test \
+  -P ubuntu-latest=catthehacker/ubuntu:act-latest \
+  --container-architecture linux/amd64 \
+  --container-daemon-socket - \
+  --matrix os:ubuntu-latest
+```
+
+**Windows:**
+```bash
+cd /tmp/nut-release-workspace && act workflow_dispatch \
+  -W .github/workflows/tagged_release.yaml \
+  --secret-file .secrets \
+  -j test \
+  -P windows-latest=catthehacker/ubuntu:act-latest \
+  --container-architecture linux/amd64 \
+  --container-daemon-socket - \
+  --matrix os:windows-latest
+```
+
+**macOS:**
+```bash
+cd /tmp/nut-release-workspace && act workflow_dispatch \
+  -W .github/workflows/tagged_release.yaml \
+  --secret-file .secrets \
+  -j test \
+  -P macos-latest=-self-hosted \
+  --container-daemon-socket - \
+  --matrix os:macos-latest
+```
+
+### Deploy job (publishes all packages)
+
+```bash
+cd /tmp/nut-release-workspace && act workflow_dispatch \
+  -W .github/workflows/tagged_release.yaml \
+  --secret-file .secrets \
+  -j deploy \
+  -P ubuntu-latest=catthehacker/ubuntu:act-latest \
+  --container-architecture linux/amd64 \
+  --container-daemon-socket -
+```
+
+## Worktree Modifications Required
+
+The following changes must be in the worktree (already committed on `fix-release-one`) before running the workflows:
+
+### `libnut-core/CMakeLists.txt`
+Add macOS deployment target before `project()` to fix a build failure on macOS 15 (`CGDisplayCreateImageForRect` was removed):
+```cmake
+if (UNIX AND APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "14.0" CACHE STRING "Minimum macOS deployment target" FORCE)
+endif()
+```
+
+### `providers/libnut/package.json`
+The `libnut-*` dependency versions must match what is actually published under `@kumar-sambhav`. Update if needed:
+```json
+"dependencies": {
+  "@kumar-sambhav/libnut-darwin": "2.7.2",
+  "@kumar-sambhav/libnut-linux": "2.7.2",
+  "@kumar-sambhav/libnut-win32": "2.7.2"
+}
+```
+
+### `libnut-core/patch-packagename.js`
+Verify the org scope is `@kumar-sambhav` (not `@nut-tree` or any other value) before each publish run.
+
+## Known Gotchas
+
+- **`--container-daemon-socket -`**: Use the literal dash, not the socket file path. Passing the socket path (e.g. `~/.colima/docker.sock`) causes Docker to attempt creating a directory at that path inside the container and fail.
+- **pnpm scope registry**: pnpm ignores `NPM_CONFIG_USERCONFIG` for scope-specific registry settings. The `tagged_release.yaml` workflow writes a `.npmrc` to the project root inside the container to work around this.
+- **Separate matrix runs**: Do not combine `-P ubuntu-latest=...` and `-P macos-latest=-self-hosted` in the same `act` invocation — act will skip all jobs. Always use `--matrix os:<target>` and run one platform at a time.
